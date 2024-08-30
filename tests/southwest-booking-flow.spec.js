@@ -10,8 +10,10 @@ test('has title', async ({ page }) => {
     const departureInputField = page.locator('#LandingAirBookingSearchForm_originationAirportCode');
     const destinationInputField = page.locator("#LandingAirBookingSearchForm_destinationAirportCode");
     await departureInputField.fill("LGA");
+    await page.keyboard.press("Enter")
     // choose LAX for destination
     await destinationInputField.fill("LAX")
+    await page.keyboard.press("Enter")
     // choose dates
     //departure date => next month second friday
     await page.locator("#LandingAirBookingSearchForm_departureDate").fill("9/08")
